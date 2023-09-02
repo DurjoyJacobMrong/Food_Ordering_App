@@ -54,7 +54,7 @@
                     unset($_SESSION['change-pwd']); //Removie Session Message
                 }
             ?>
-            ?>
+            
 
             <table class="tbl-full">
                 <tr>

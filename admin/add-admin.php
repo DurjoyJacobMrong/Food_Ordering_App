@@ -66,7 +66,7 @@
         //echo "Button Clicked";
 
         // 1. Get the data from form
-        $full_naem = $_POST['full_name'];
+        $full_name = $_POST['full_name'];
         $username = $_POST['username'];
         $password = md5($_POST['password']);
         
@@ -78,14 +78,14 @@
         ";
 
         // 3. Execute Query and Save Data in Database
-        $res = mysqli_query($conn, $sql) or die(mysqli_error());
+        $res = mysqli_query($conn, $sql) or die('Could not connect: ' . mysqli_error($conn));
 
         // 4. Check whether the (Query is Executed) data is inserted or not and display appropiate message
         if($res==TRUE)
         {
             //echo "Data Inserted";
             //Display message
-            $_SESSION['add'] = "Added Sucessfully!";
+            $_SESSION['add'] = "<div class='success'>Added Sucessfully!</div>";
             //Redirect page to Manage Admin
             header("location:".SITEURL.'admin/manage-admin.php');
         }
@@ -93,7 +93,7 @@
         {
             //echo "Failed to Insert Data";
             //Display message
-            $_SESSION['add'] = "Failed to add!";
+            $_SESSION['add'] = "<div class='error'>Failed to add!</div>";
             //Redirect page to Add Admin
             header("location:".SITEURL.'admin/add-admin.php');
         }
