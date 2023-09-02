@@ -42,15 +42,15 @@
 
                 <tr>
                     <td>Username</td>
-                    <td><input type="text" name="" value="<?php echo $username; ?>"></td>
+                    <td><input type="text" name="username" value="<?php echo $username; ?>"></td>
                 </tr>
 
                 <tr>
                     <td colspan="2">
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
-                        <input type="submit" value="Update Admin" class="btn-secondary">
+                        <input type="submit" name="submit" value="Update Admin" class="btn-secondary">
                     </td>
-                    <td><input type="text" name="" value=""></td>
+                    
                 </tr>
 
             </table>
@@ -61,7 +61,7 @@
 
 <?php
  
- if($_POST['submit']){
+ if(isset($_POST['submit'])){
     
     $id = $_POST['id'];
     $full_name = $_POST['full_name'];

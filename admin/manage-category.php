@@ -14,7 +14,7 @@
     <!--Main Content Starts-->
     <div class="main-content">
         <div class="wrapper">
-            <h1>Manage Catagory</h1>
+            <h1>Manage Category</h1>
 
             <br><br>
             <!-- Add Admin Button-->

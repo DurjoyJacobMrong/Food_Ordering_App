@@ -57,12 +57,12 @@
  if(isset($_POST['submit'])){
     $id = $_POST['id'];
     $current_password = md5($_POST['current_password']);
-    $now_password = md5($_POST['new_password']);
+    $new_password = md5($_POST['new_password']);
     $confirm_password = md5($_POST['confirm_password']);
 
     $sql = "SELECT * FROM tbl_admin WHERE id = $id AND password = '$current_password'";
     
-    $res = mysqli_query($con,$sql);
+    $res = mysqli_query($conn,$sql);
 
     if($res==true){
 
@@ -70,7 +70,7 @@
 
         if($count == 1){
 
-            if($new_password = $confirm_pasword){
+            if($new_password = $confirm_password){
 
                 $sql2 = "UPDATE tbl_admin SET password='$new_password' WHERE id = $id";
 
